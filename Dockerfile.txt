@@ -1,5 +1,11 @@
-FROM java:8
-COPY . /var/www/java
-WORKDIR /var/www/java
-RUN javac Hello.java
-CMD ["java", "Hello"]
+FROM alpine
+MKDIR /root/Hello-world
+COPY Helloworld.java/root/Hello-world
+#install JDK
+RUN apk add openjdk8
+ENV JAVA_HOME /user/lib/jvm/java-1.8-openjdk
+ENV PATH $PATH: $JAVA_HOME/bin
+#compile helloworld
+
+RUN javac Helloworld.java
+ENTRYPOINT java Helloworld
