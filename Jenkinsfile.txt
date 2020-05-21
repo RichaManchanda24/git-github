@@ -21,10 +21,13 @@ pipeline {
 }
 post{
 success{
-echo'post'
+echo'post success'
 }
 always{
-echo'post'
+echo'post always'
+}
+failure{
+echo'post failure'
 }
 }
 }
