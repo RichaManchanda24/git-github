@@ -19,4 +19,12 @@ pipeline {
         }
        
 }
+post{
+success{
+echo'post'
+}
+always{
+echo'post'
+}
+}
 }
