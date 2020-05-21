@@ -17,9 +17,5 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Building image') {
-            steps{
-               echo 'building image again....'
-      }
-    }
+       )
 }
