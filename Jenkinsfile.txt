@@ -10,7 +10,7 @@ pipeline {
         
             steps {
                 echo 'Building..'
-                ECHO 'bUILDING VERSION IS $(NEW_VERSION)'
+                ECHO 'bUILDING VERSION IS' $(NEW_VERSION)
                 
             }
         }
