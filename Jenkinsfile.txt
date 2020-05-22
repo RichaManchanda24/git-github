@@ -20,12 +20,23 @@ pipeline {
     NEW_VERSION='1.3.0'
     }
     stages {
+    stage("init") {
+        
+            steps {
+               script {
+                  gv=load "script.groovy"
+               }
+            }
+        }
         stage('Build') {
         
             steps {
-                echo 'Building..'
-                echo "BUILDING VERSION IS ${NEW_VERSION}"
+              script {
+               // echo 'Building..'
+                //echo "BUILDING VERSION IS ${NEW_VERSION}"
+                gv.buildApp() 
                // sh "mvn install"
+            }
             }
         }
         stage('Test') {
