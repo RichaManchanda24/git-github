@@ -1,4 +1,4 @@
-
+def gv
 pipeline {
     agent any
     //access build tools for your proect like maven , gradle and jdk
