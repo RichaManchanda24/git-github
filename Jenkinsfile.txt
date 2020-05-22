@@ -1,4 +1,4 @@
-def gv
+
 pipeline {
     agent any
     //access build tools for your proect like maven , gradle and jdk
@@ -20,23 +20,12 @@ pipeline {
     NEW_VERSION='1.3.0'
     }
     stages {
-    stage('init') {
-        
-            steps {
-               script {
-                  gv = load "script.groovy"
-               }
-            }
-        }
         stage('Build') {
         
             steps {
-              script {
-               // echo 'Building..'
-                //echo "BUILDING VERSION IS ${NEW_VERSION}"
-                gv.buildApp() 
+                echo 'Building..'
+                echo "BUILDING VERSION IS ${NEW_VERSION}"
                // sh "mvn install"
-            }
             }
         }
         stage('Test') {
